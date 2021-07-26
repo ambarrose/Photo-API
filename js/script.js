@@ -1,9 +1,11 @@
 console.log('script');
+//Accessing key from config.json
+var myKey=JSON.parse(myKey);//convert json into js object
+console.log(myKey[0].key);
+var key = myKey[0].key;
 
 $.ajax({
-  url : 'https://api.unsplash.com/photos?page=28&client_id=',
-
-  type: 'GET',
+  url : 'https://api.unsplash.com/photos?page=28&client_id='+key,
   data: 'json',
   success: function(data){
     console.log(data);
